@@ -1,12 +1,19 @@
+import { useState } from "react";
+
 const FAQ = () => {
+  const [isChecked, setIsChecked] = useState(false);
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
+
   return (
-    <div className="section-container text-center my-20">
+    <section className="section-container text-center my-20">
       <div className="my-16">
       <p className="subtitle">Do You Have Questions ??</p>
       <h2 className="title">Frequently Asked Questions(FAQ)</h2>
       </div>
       <div className="collapse collapse-arrow bg-green text-white my-5 ">
-        <input type="radio" name="my-accordion-2" checked="checked" />
+        <input type="radio" name="my-accordion-2" checked={isChecked} onChange={handleCheckboxChange} />
         <div className="collapse-title text-xl font-medium">
         What is the main purpose of this Polling and Survey application?
         </div>
@@ -15,7 +22,7 @@ const FAQ = () => {
         </div>
       </div>
       <div className="collapse collapse-arrow bg-green text-white my-5">
-        <input type="radio" name="my-accordion-2" />
+        <input type="radio" name="my-accordion-2" checked={isChecked} onChange={handleCheckboxChange} />
         <div className="collapse-title text-xl font-medium">
         Can anyone participate in the surveys?
         </div>
@@ -24,7 +31,7 @@ const FAQ = () => {
         </div>
       </div>
       <div className="collapse collapse-arrow bg-green text-white my-5">
-        <input type="radio" name="my-accordion-2" />
+        <input type="radio" name="my-accordion-2" checked={isChecked} onChange={handleCheckboxChange} />
         <div className="collapse-title text-xl font-medium">
         What are the benefits of becoming a pro user?
         </div>
@@ -33,7 +40,7 @@ const FAQ = () => {
         </div>
       </div>
       <div className="collapse collapse-arrow bg-green text-white my-5">
-        <input type="radio" name="my-accordion-2" />
+        <input type="radio" name="my-accordion-2" checked={isChecked} onChange={handleCheckboxChange} />
         <div className="collapse-title text-xl font-medium">
         How can I upgrade my user role to become a pro user?
         </div>
@@ -41,7 +48,7 @@ const FAQ = () => {
           <p className="my-10 md:px-32 text-white">To become a pro user, simply navigate to the Pricing page where you'll find details about our membership plans. Upon successful payment, your user role will be upgraded, granting access to additional features and privileges.</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

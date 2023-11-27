@@ -1,12 +1,15 @@
 import { CiLogin } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navItems = (
     <>
       <li>
-        <a>Home</a>
+        <Link to="/">
+          Home
+        </Link>
       </li>
-      
+
       <li>
         <a>Surveys</a>
       </li>
@@ -51,12 +54,16 @@ const Navbar = () => {
           </p>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {navItems}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{navItems}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn bg-green rounded-full px-6 text-white flex items-center"><CiLogin />Register</a>
+          <Link
+            to="signup"
+            className="btn bg-green rounded-full px-6 text-white flex items-center"
+          >
+            <CiLogin />
+            Register
+          </Link>
         </div>
       </div>
     </header>

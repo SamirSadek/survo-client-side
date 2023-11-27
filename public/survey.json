@@ -1,0 +1,103 @@
+[
+    {
+      "title": "Home Rental",
+      "description": "Understand whether respondents currently own their place of residence. Select 'Yes' if you are a homeowner or 'No' if you do not.",
+      "options": "yes",
+      "category": "Demographics",
+      "like": 0,
+      "dislike": 0,
+      "vote": 0,
+      "timestamp": "2023-11-27T12:34:56.789Z"
+    },
+    {
+      "title": "Education Feedback Survey",
+      "description": "Help us improve our education services by providing your feedback.",
+      "options": "yes",
+      "category": "Education",
+      "like": 0,
+      "dislike": 0,
+      "vote": 1,
+      "timestamp": "2023-11-27T12:35:00.123Z"
+    },
+    {
+      "title": "Market Trends Survey",
+      "description": "Gather insights into current market trends.",
+      "options": "yes",
+      "category": "Market Research",
+      "like": 0,
+      "dislike": 0,
+      "vote": 0,
+      "timestamp": "2023-11-27T12:35:10.456Z"
+    },
+    {
+      "title": "Health and Wellness Check",
+      "description": "Focus on health habits and wellness practices.",
+      "options": "yes",
+      "category": "Health",
+      "like": 0,
+      "dislike": 0,
+      "vote": 0,
+      "timestamp": "2023-11-27T12:35:20.789Z"
+    },
+    {
+      "title": "Social Issues Awareness",
+      "description": "Opinions on prevalent social issues.",
+      "options": "yes",
+      "category": "Social Issues",
+      "like": 0,
+      "dislike": 0,
+      "vote": 0,
+      "timestamp": "2023-11-27T12:35:30.234Z"
+    },
+    {
+      "title": "Home Rental Preferences",
+      "description": "Understand preferences in home rental.",
+      "options": "yes",
+      "category": "Demographics",
+      "like": 0,
+      "dislike": 0,
+      "vote": 0,
+      "timestamp": "2023-11-27T12:35:40.567Z"
+    },
+    {
+      "title": "Technology in Education",
+      "description": "Perceptions about technology in education.",
+      "options": "yes",
+      "category": "Education",
+      "like": 0,
+      "dislike": 0,
+      "vote": 0,
+      "timestamp": "2023-11-27T12:35:50.890Z"
+    },
+    {
+      "title": "Consumer Behavior Study",
+      "description": "Understanding consumer behavior patterns.",
+      "options": "yes",
+      "category": "Market Research",
+      "like": 0,
+      "dislike": 0,
+      "vote": 0,
+      "timestamp": "2023-11-27T12:36:00.123Z"
+    },
+    {
+      "title": "Fitness and Lifestyle Choices",
+      "description": "Impact of lifestyle choices on health.",
+      "options": "yes",
+      "category": "Health",
+      "like": 0,
+      "dislike": 0,
+      "vote": 0,
+      "timestamp": "2023-11-27T12:36:10.456Z"
+    },
+    {
+      "title": "Environmental Concerns Survey",
+      "description": "Opinions and concerns about environmental issues.",
+      "options": "yes",
+      "category": "Social Issues",
+      "like": 0,
+      "dislike": 0,
+      "vote": 0,
+      "timestamp": "2023-11-27T12:36:20.789Z"
+    }
+  ]
+  

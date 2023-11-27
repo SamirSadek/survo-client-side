@@ -2,12 +2,12 @@ import { FaStar } from "react-icons/fa";
 
 const Testimonials = () => {
   return (
-    <div className="section-container">
+    <section className="section-container">
       <div className="flex flex-col md:flex-row items-center justify-between gap-12">
         <div className="md:w-1/2">
           <img
             className="w-96 h-96 mx-auto"
-            src="../../public/survey.png"
+            src="/survey.png"
             alt=""
           />
         </div>
@@ -23,17 +23,17 @@ const Testimonials = () => {
               <div className="avatar-group -space-x-6 rtl:space-x-reverse">
                 <div className="avatar">
                   <div className="w-12 cursor-pointer">
-                    <img src="../../public/testimonial1.png" />
+                    <img src="/testimonial1.png" />
                   </div>
                 </div>
                 <div className="avatar">
                   <div className="w-12 cursor-pointer">
-                    <img src="../../public/testimonial2.png" />
+                    <img src="/testimonial2.png" />
                   </div>
                 </div>
                 <div className="avatar">
                   <div className="w-12 cursor-pointer">
-                    <img src="../../public/testimonial3.png" />
+                    <img src="/testimonial3.png" />
                   </div>
                 </div>
               </div>
@@ -51,7 +51,7 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

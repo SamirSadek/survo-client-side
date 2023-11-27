@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="section-container bg-gradient-to-r from-[#FAFAFA] from-0% to-[#FCFCFC] to-100%">
+    <section className="section-container bg-gradient-to-r from-[#FAFAFA] from-0% to-[#FCFCFC] to-100%">
       <div className="py-24 flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="md:w-1/2 space-y-7 px-4">
           <h2 className="md:text-5xl text-4xl font-bold md:leading-snug leading-snug">
@@ -11,10 +11,10 @@ const Banner = () => {
         </div>
 
         <div className="md:w-1/2">
-            <img src="/public/Banner.png" className="w-96 h-80 px-10 mx-auto" alt="" />
+            <img src="/Banner.png" className="w-96 h-80 px-10 mx-auto" alt="" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
