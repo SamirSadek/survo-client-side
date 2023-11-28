@@ -1,18 +1,23 @@
-import { useEffect, useState } from "react";
 import FeaturedSurveysCard from "./FeaturedSurveysCard";
+import useSurvey from "../hooks/useSurvey";
 
 const FeaturedSurveys = () => {
-  const [survey, setSurvey] = useState([]);
-  useEffect(() => {
-    fetch("survey.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const sortedSurveys = data.sort((a, b) => b.vote - a.vote);
-        const top6Surveys = sortedSurveys.slice(0, 6);
-        console.log(top6Surveys);
-        setSurvey(top6Surveys);
-      });
-  }, []);
+  const [survey] = useSurvey()
+
+  const sortedSurveys = survey.sort((a, b) => b.vote - a.vote);
+  const top6Surveys = sortedSurveys.slice(0, 6);
+
+//   const [survey, setSurvey] = useState([]);
+//   useEffect(() => {
+//     fetch("survey.json")
+//       .then((res) => res.json())
+//       .then((data) => {
+//         const sortedSurveys = data.sort((a, b) => b.vote - a.vote);
+//         const top6Surveys = sortedSurveys.slice(0, 6);
+//         console.log(top6Surveys);
+//         setSurvey(top6Surveys);
+//       });
+//   }, []);
 
   return (
     <section className="section-container">
@@ -22,7 +27,7 @@ const FeaturedSurveys = () => {
       </div>
       <div className="flex flex-wrap justify-center gap-5">
         {
-            survey.map(item => <FeaturedSurveysCard key={item.title} item={item}></FeaturedSurveysCard>)
+            top6Surveys.map(item => <FeaturedSurveysCard key={item.title} item={item}></FeaturedSurveysCard>)
         }
         </div>
     </section>
