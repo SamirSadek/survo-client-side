@@ -1,17 +1,41 @@
+import { useContext } from "react";
 import { CiLogin } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const { user,logOut } = useContext(AuthContext);
+   const handleLogout =() =>{
+    logOut()
+    .then(()=>{
+      Swal.fire({
+        title: "Log Out Successfully",
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `
+        },
+        hideClass: {
+          popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `
+        }
+      });
+    })
+   }
   const navItems = (
     <>
       <li>
-        <Link to="/">
-          Home
-        </Link>
+        <Link to="/">Home</Link>
       </li>
 
       <li>
-        <Link to='surveys'>Surveys</Link>
+        <Link to="surveys">Surveys</Link>
       </li>
       <li>
         <a>Pricing</a>
@@ -57,13 +81,20 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navItems}</ul>
         </div>
         <div className="navbar-end">
-          <Link
-            to="signup"
-            className="btn bg-green rounded-full px-6 text-white flex items-center"
-          >
-            <CiLogin />
-            Register
-          </Link>
+          {user ? (
+            <button onClick={handleLogout} className="btn bg-green rounded-full px-6 text-white flex items-center">
+              <CiLogin />
+              Logout
+            </button>
+          ) : (
+            <Link
+              to="signup"
+              className="btn bg-green rounded-full px-6 text-white flex items-center"
+            >
+              <CiLogin />
+              Register
+            </Link>
+          )}
         </div>
       </div>
     </header>
