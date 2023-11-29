@@ -4,13 +4,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.css";
+import SocialLogin from "../../components/SocialLogin";
+
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
-  const navigate = useNavigate()
-  const location = useLocation()
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const from = location.state?.from?.pathname || '/'
+  const from = location.state?.from?.pathname || "/";
 
   const {
     register,
@@ -44,8 +46,7 @@ const Login = () => {
             `,
           },
         });
-        navigate(from, {replace : true})
-        
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error.message);
@@ -104,6 +105,7 @@ const Login = () => {
               </Link>
             </small>
           </p>
+          <SocialLogin/>
         </div>
       </div>
     </div>

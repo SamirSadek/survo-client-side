@@ -1,7 +1,10 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../../components/SocialLogin";
 
 const SignUp = () => {
 //   const {} = useContext()
@@ -10,8 +13,9 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const {createUser} = useContext(AuthContext)
+  const axiosPublic = useAxiosPublic()
+  const navigate = useNavigate()
+  const {createUser,updateUserProfile,logOut} = useContext(AuthContext)
 
   const onSubmit = handleSubmit((data) => {
     console.log(data);
@@ -20,6 +24,30 @@ const SignUp = () => {
     .then(result =>{
         const loggedUser = result.user
         console.log(loggedUser)
+        updateUserProfile(data.name, data.photourl)
+        .then(()=>{
+          const userInfo = {
+            name: data.name,
+            email: data.email
+          }
+          axiosPublic.post('/users',userInfo)
+          .then(res=>{
+            if(res.data.insertedId){
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "User Created Successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
+          })
+         
+          logOut()
+          navigate('/login')
+
+        })
+        .catch(error => console.log(error))
     })
   });
   return (
@@ -92,6 +120,7 @@ const SignUp = () => {
 
             </form>
             <p className='text-center  mb-10'><small>Already have an account ? <Link className='text-green underline' to='/login'>Please login</Link></small></p>
+            <SocialLogin/>
 
         </div>
       </div>

@@ -41,7 +41,7 @@ const Navbar = () => {
         <a>Pricing</a>
       </li>
       <li>
-        <a>Dashboard</a>
+        <Link to='/dashboard'>Dashboard</Link>
       </li>
     </>
   );
@@ -82,10 +82,16 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <button onClick={handleLogout} className="btn bg-green rounded-full px-6 text-white flex items-center">
+            <div className="flex gap-2">
+              <div  className="border border-green bg-base-200 text-sm rounded-full px-2 text-black flex items-center md:gap-2">
+             <img src={user.photoURL} className="w-10 rounded-full border border-green" alt="" />
+              {user.displayName}
+            </div>
+              <button onClick={handleLogout} className="btn bg-green rounded-full md:px-6 text-white flex items-center">
               <CiLogin />
               Logout
             </button>
+            </div>
           ) : (
             <Link
               to="signup"
