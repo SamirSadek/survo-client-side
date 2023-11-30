@@ -6,6 +6,11 @@ import SignUp from "../Pages/Register/SignUp";
 import Surveys from "../Pages/Surveys/Surveys";
 import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Layout/Dashboard";
+import ManageUser from "../Pages/Dashboard/Admin/ManageUser";
+import SurveyStatus from "../Pages/Dashboard/Admin/SurveyStatus";
+import PaymentHistory from "../Pages/Dashboard/Admin/PaymentHistory";
+import SurveyResponse from "../Pages/Dashboard/Admin/SurveyResponse";
+import Charts from "../Pages/Dashboard/Admin/Charts";
 
 
 const router = createBrowserRouter([
@@ -33,7 +38,29 @@ const router = createBrowserRouter([
     },
     {
       path:'dashboard',
-      element:<Dashboard/>
+      element:<Dashboard/>,
+      children:[
+        {
+          path:'manageuser',
+          element:<ManageUser/>
+        },
+        {
+          path:'surveystatus',
+          element:<SurveyStatus/>
+        },
+        {
+          path:'paymenthistory',
+          element:<PaymentHistory/>
+        },
+        {
+          path:'surveyresponse',
+          element:<SurveyResponse/>
+        },
+        {
+          path:'charts',
+          element:<Charts/>
+        }
+      ]
     }
   ]);
 
