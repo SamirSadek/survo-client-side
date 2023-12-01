@@ -11,6 +11,12 @@ import SurveyStatus from "../Pages/Dashboard/Admin/SurveyStatus";
 import PaymentHistory from "../Pages/Dashboard/Admin/PaymentHistory";
 import SurveyResponse from "../Pages/Dashboard/Admin/SurveyResponse";
 import Charts from "../Pages/Dashboard/Admin/Charts";
+import CreateSurvey from "../Pages/Dashboard/Surveyor/CreateSurvey";
+import UpdateSurvey from "../Pages/Dashboard/Surveyor/UpdateSurvey";
+import FeedbackUsers from "../Pages/Dashboard/Surveyor/FeedbackUsers";
+import ParticipateSurvey from "../Pages/Dashboard/User/ParticipateSurvey";
+import UpdateSurveyItem from "../Pages/Dashboard/Surveyor/UpdateSurveyItem";
+import ParticipateSurveyItem from "../Pages/Dashboard/User/ParticipateSurveyItem";
 
 
 const router = createBrowserRouter([
@@ -59,7 +65,33 @@ const router = createBrowserRouter([
         {
           path:'charts',
           element:<Charts/>
-        }
+        },
+        {
+          path:'createsurvey',
+          element:<CreateSurvey/>
+        },
+        {
+          path:'updatesurvey',
+          element:<UpdateSurvey/>
+        },
+        {
+          path:'udpatesurvey/:id',
+          element:<UpdateSurveyItem/>,
+          loader: ({params}) => fetch(`http://localhost:5000/surveys/${params.id}`)
+        },
+        {
+          path:'participatesurvey/:id',
+          element:<ParticipateSurveyItem/>,
+          loader: ({params}) => fetch(`http://localhost:5000/surveys/${params.id}`)
+        },
+        {
+          path:'feedbacks',
+          element:<FeedbackUsers/>
+        },
+        {
+          path:'participate',
+          element:<ParticipateSurvey/>
+        },
       ]
     }
   ]);

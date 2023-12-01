@@ -33,12 +33,12 @@ const ManageUser = () => {
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead>
+          <thead className="bg-green text-white">
             <tr>
               <th>#</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Select Role</th>
+              <th>Change Role</th>
               <th>Role</th>
             </tr>
           </thead>
@@ -69,7 +69,7 @@ const ManageUser = () => {
                     <option value="Surveyor">Surveyor</option>
                   </select>
                 </td>
-                <td>{item.role}</td>
+                <td className="text-green font-bold">{item.role}</td>
               </tr>
             ))}
           </tbody>

@@ -2,6 +2,8 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaHome, FaUsers } from "react-icons/fa";
 import { IoIosCreate } from "react-icons/io";
 import { VscFeedback } from "react-icons/vsc";
+import { GiEngagementRing } from "react-icons/gi";
+
 
 import {
   MdLogout,
@@ -18,11 +20,10 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 
-
 const Dashboard = () => {
   const { user, loading } = useContext(AuthContext);
   const axiosPublic = useAxiosPublic();
-  
+
   const { data: users = [] } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
@@ -30,9 +31,8 @@ const Dashboard = () => {
       return res.data;
     },
   });
-  if(loading){
-    return <progress className="progress w-full"></progress>
-
+  if (loading) {
+    return <progress className="progress w-full"></progress>;
   }
   const userEmail = user.email;
   const foundUser = users.find((user) => user.email === userEmail);
@@ -120,13 +120,13 @@ const Dashboard = () => {
                   to="/dashboard/updatesurvey"
                   className="flex  items-center gap-3 aria-[current=page]:text-green"
                 >
-                  <MdUpdate/>
+                  <MdUpdate />
                   Update Survey
                 </NavLink>
               </li>
               <li className="text-gray-700 font-semibold px-4 ">
                 <NavLink
-                  to="/dashboard/paymenthistory"
+                  to="/dashboard/feedbacks"
                   className="flex  items-center gap-3 aria-[current=page]:text-green"
                 >
                   <VscFeedback />
@@ -155,45 +155,23 @@ const Dashboard = () => {
           </>
         )}
         {/* NormalUser */}
-        {/* {users?.role == 'NormalUser' && (
+        {foundUser?.role == "NormalUser" && (
           <>
+            <h2 className="text-center font-bold">User Dashboard</h2>
+
             <ul className="my-10 px-4 space-y-2">
               <li className="text-gray-700 font-semibold px-4 ">
                 <NavLink
-                  to="/dashboard/manageuser"
+                  to="/dashboard/participate"
                   className="flex  items-center gap-3 aria-[current=page]:text-green"
                 >
-                  <FaUsers />
-                  Manage Users
-                </NavLink>
-              </li>
-              <li className="text-gray-700 font-semibold px-4 ">
-                <NavLink to='/dashboard/surveystatus' className="flex  items-center gap-3 aria-[current=page]:text-green">
-                  <MdPublishedWithChanges />
-                  Survey Status
-                </NavLink>
-              </li>
-              <li className="text-gray-700 font-semibold px-4 ">
-                <NavLink to='/dashboard/paymenthistory' className="flex  items-center gap-3 aria-[current=page]:text-green">
-                  <MdOutlinePayments />
-                  Payment History
-                </NavLink>
-              </li>
-              <li className="text-gray-700 font-semibold px-4 ">
-                <NavLink to='/dashboard/surveyresponse' className="flex  items-center gap-3 aria-[current=page]:text-green">
-                  <FcSurvey />
-                  Survey Responses
-                </NavLink>
-              </li>
-              <li className="text-gray-700 font-semibold px-4 ">
-                <NavLink to='/dashboard/charts' className="flex  items-center gap-3 aria-[current=page]:text-green">
-                  <IoBarChartSharp />
-                  Charts
+                  <GiEngagementRing />
+                  Participate Survey
                 </NavLink>
               </li>
             </ul>
           </>
-        )} */}
+        )}
 
         <div className="divider px-8"></div>
 
@@ -213,7 +191,7 @@ const Dashboard = () => {
           <li className="text-gray-700 font-semibold px-4 ">
             <NavLink className="flex  items-center gap-3 ">
               <MdOutlinePriceChange />
-              Pricing
+              Pro
             </NavLink>
           </li>
           <li className="text-gray-700 font-semibold px-4 ">

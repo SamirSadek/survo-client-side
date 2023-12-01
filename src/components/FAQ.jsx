@@ -45,7 +45,7 @@ const FAQ = () => {
         How can I upgrade my user role to become a pro user?
         </div>
         <div className="collapse-content">
-          <p className="my-10 md:px-32 text-white">To become a pro user, simply navigate to the Pricing page where you'll find details about our membership plans. Upon successful payment, your user role will be upgraded, granting access to additional features and privileges.</p>
+          <p className="my-10 md:px-32 text-white">To become a pro user, simply navigate to the Pro page where you'll find details about our membership plans. Upon successful payment, your user role will be upgraded, granting access to additional features and privileges.</p>
         </div>
       </div>
     </section>
