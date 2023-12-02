@@ -183,13 +183,13 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li className="text-gray-700 font-semibold px-4 ">
-            <NavLink className="flex  items-center gap-3 ">
+            <NavLink to='/surveys' className="flex  items-center gap-3 ">
               <RiSurveyFill />
               Surveys
             </NavLink>
           </li>
           <li className="text-gray-700 font-semibold px-4 ">
-            <NavLink className="flex  items-center gap-3 ">
+            <NavLink to='/pro' className="flex  items-center gap-3 ">
               <MdOutlinePriceChange />
               Pro
             </NavLink>

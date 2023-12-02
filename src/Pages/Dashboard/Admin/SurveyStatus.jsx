@@ -46,7 +46,7 @@ const SurveyStatus = () => {
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead>
+          <thead className="bg-green text-white">
             <tr>
               <th>#</th>
               <th>Name</th>

@@ -17,6 +17,8 @@ import FeedbackUsers from "../Pages/Dashboard/Surveyor/FeedbackUsers";
 import ParticipateSurvey from "../Pages/Dashboard/User/ParticipateSurvey";
 import UpdateSurveyItem from "../Pages/Dashboard/Surveyor/UpdateSurveyItem";
 import ParticipateSurveyItem from "../Pages/Dashboard/User/ParticipateSurveyItem";
+import Pro from "../Pages/Pro/Pro";
+import Payment from "../Pages/Pro/Payment";
 
 
 const router = createBrowserRouter([
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
         {
             path:'/signup',
             element:<SignUp/>
+        },
+        {
+            path:'/pro',
+            element:<Pro/>
+        },
+        {
+            path:'/pro/payment',
+            element:<Payment/>
         },
         {
             path:'/surveys',

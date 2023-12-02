@@ -29,6 +29,10 @@ const Surveys = () => {
 //  className="flex flex-wrap gap-20 section-container justify-center mt-10"
   return (
     <section className="section-container mt-10">
+      <div className="my-16 text-center">
+        <p className="subtitle">All Surveys</p>
+        <h2 className="title">Find the Survey</h2>
+      </div>
       <div className="flex justify-evenly my-10">
       <div >
         <select className="px-5 py-3 rounded bg-green text-white" value={filterCategory} onChange={handleCategoryFilterChange}>
