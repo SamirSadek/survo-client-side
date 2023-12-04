@@ -9,7 +9,12 @@
 
 Admin: admin@123.com
 
-password : S@mirs123
+password: S@mirs123
+
+Surveyor: samirsadek@3.com
+
+password: S@mirs123
+
 ## Features and Functionalities
 
 * **Role-Based Access Control:** User roles (user, surveyor, admin, pro-user) with distinct permissions.Admin control over user roles, including elevating roles to admin/surveyor.
