@@ -53,6 +53,15 @@ const Dashboard = () => {
           <>
             <h2 className="text-center font-bold">Admin Dashboard</h2>
             <ul className="my-10 px-4 space-y-2">
+            <li className="text-gray-700 font-semibold px-4 ">
+                <NavLink
+                  to="/dashboard/charts"
+                  className="flex  items-center gap-3 aria-[current=page]:text-green"
+                >
+                  <IoBarChartSharp />
+                  Admin Profile
+                </NavLink>
+              </li>
               <li className="text-gray-700 font-semibold px-4 ">
                 <NavLink
                   to="/dashboard/manageuser"
@@ -89,15 +98,7 @@ const Dashboard = () => {
                   Survey Responses
                 </NavLink>
               </li>
-              <li className="text-gray-700 font-semibold px-4 ">
-                <NavLink
-                  to="/dashboard/charts"
-                  className="flex  items-center gap-3 aria-[current=page]:text-green"
-                >
-                  <IoBarChartSharp />
-                  Charts
-                </NavLink>
-              </li>
+              
             </ul>
           </>
         )}
@@ -106,6 +107,15 @@ const Dashboard = () => {
           <>
             <h2 className="text-center font-bold">Surveyor Dashboard</h2>
             <ul className="my-10 px-4 space-y-2">
+            <li className="text-gray-700 font-semibold px-4 ">
+                <NavLink
+                  to="/dashboard/surveyorHome"
+                  className="flex  items-center gap-3 aria-[current=page]:text-green"
+                >
+                  <IoBarChartSharp />
+                  Surveyor Home
+                </NavLink>
+              </li>
               <li className="text-gray-700 font-semibold px-4 ">
                 <NavLink
                   to="/dashboard/createsurvey"
@@ -142,15 +152,7 @@ const Dashboard = () => {
                   Survey Responses
                 </NavLink>
               </li>
-              <li className="text-gray-700 font-semibold px-4 ">
-                <NavLink
-                  to="/dashboard/charts"
-                  className="flex  items-center gap-3 aria-[current=page]:text-green"
-                >
-                  <IoBarChartSharp />
-                  Charts
-                </NavLink>
-              </li>
+              
             </ul>
           </>
         )}
@@ -158,6 +160,24 @@ const Dashboard = () => {
         {foundUser?.role == "NormalUser" && (
           <>
             <h2 className="text-center font-bold">User Dashboard</h2>
+
+            <ul className="my-10 px-4 space-y-2">
+              <li className="text-gray-700 font-semibold px-4 ">
+                <NavLink
+                  to="/dashboard/participate"
+                  className="flex  items-center gap-3 aria-[current=page]:text-green"
+                >
+                  <GiEngagementRing />
+                  Participate Survey
+                </NavLink>
+              </li>
+            </ul>
+          </>
+        )}
+        {/* NormalUser */}
+        {foundUser?.role == "ProUser" && (
+          <>
+            <h2 className="text-center font-bold">ProUser Dashboard</h2>
 
             <ul className="my-10 px-4 space-y-2">
               <li className="text-gray-700 font-semibold px-4 ">
@@ -194,12 +214,7 @@ const Dashboard = () => {
               Pro
             </NavLink>
           </li>
-          <li className="text-gray-700 font-semibold px-4 ">
-            <NavLink className="flex  items-center gap-3 ">
-              <MdLogout />
-              Logout
-            </NavLink>
-          </li>
+          
         </ul>
       </div>
       <div className="flex-1">

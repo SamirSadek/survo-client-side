@@ -16,7 +16,7 @@ const UpdateSurvey = () => {
         <h2 className="title">Your Created Surveys</h2>
       </div>
       <div className="my-5">
-        <p>Your Created Survey: {yourSurvey.length} </p>
+        <p>Your Created Survey: {yourSurvey?.length} </p>
         {
           //
           yourSurvey.map((item) => (

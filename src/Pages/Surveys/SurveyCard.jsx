@@ -1,5 +1,6 @@
 
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 const SurveyCard = ({item}) => {
   return (
@@ -13,7 +14,9 @@ const SurveyCard = ({item}) => {
 
           <div className="card-actions justify-between">
             <button className="px-4 py-2 bg-green rounded text-white">Total Vote : {item.vote}</button>
+            <Link to={`/surveys/${item._id}`}>
             <button className="px-4 py-2 rounded text-green bg-base-200 border-b-4 font-bold border-green">See Survey Details</button>
+            </Link>
           </div>
         </div>
       </div>

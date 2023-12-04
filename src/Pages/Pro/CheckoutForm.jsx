@@ -3,17 +3,29 @@ import { useContext, useEffect, useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { useQuery } from "@tanstack/react-query";
 
 const CheckoutForm = () => {
     const [error, setError] = useState('')
     const [clientSecret, setClientSecret] = useState("");
     const [transactionId, setTransactionId] = useState("");
 
+    
+
   const stripe = useStripe();
   const elements = useElements();
    const axiosPublic = useAxiosPublic()
    const {user} = useContext(AuthContext)
    const totalPrice = 200.00;
+   const { data: users = []  } = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+      const res = await axiosPublic.get("/users");
+      return res.data;
+    },
+  });
+
+  const loggedUser = users.find(i => i.email === user.email)
 
   useEffect(()=>{
       axiosPublic.post('/create-payment-intent',  {price: totalPrice})
@@ -63,6 +75,8 @@ const CheckoutForm = () => {
             console.log('transaction id' , paymentIntent.id)
             setTransactionId(paymentIntent.id)
 
+
+
             const payment = {
                 email: user.email,
                 price: totalPrice,
@@ -73,11 +87,15 @@ const CheckoutForm = () => {
             const res = await axiosPublic.post('/payments',payment)
             console.log('payment saved', res.data)
 
+
+            const role = await axiosPublic.put(`/users/${loggedUser._id}`, {role : 'ProUser'})
+            console.log('role Changes', role.data)
+
             if(res.data?.insertedId){
                 Swal.fire({
                     position: "center",
                     icon: "success",
-                    title: "Payment Successful",
+                    title: "Payment Successful, Now you are Pro user",
                     showConfirmButton: false,
                     timer: 1500
                   });

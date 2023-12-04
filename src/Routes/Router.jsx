@@ -19,6 +19,8 @@ import UpdateSurveyItem from "../Pages/Dashboard/Surveyor/UpdateSurveyItem";
 import ParticipateSurveyItem from "../Pages/Dashboard/User/ParticipateSurveyItem";
 import Pro from "../Pages/Pro/Pro";
 import Payment from "../Pages/Pro/Payment";
+import SurveyorHome from "../Pages/Dashboard/Surveyor/SurveyorHome";
+import SurveyDetails from "../components/SurveyDetails";
 
 
 const router = createBrowserRouter([
@@ -48,7 +50,12 @@ const router = createBrowserRouter([
         },
         {
             path:'/surveys',
-            element:<PrivateRoutes><Surveys/></PrivateRoutes>
+            element:<Surveys/>
+        },
+        {
+            path:'/surveys/:id',
+            element:<PrivateRoutes><SurveyDetails/></PrivateRoutes>,
+            loader: ({params}) => fetch(`http://localhost:5000/surveys/${params.id}`)
         },
       ]
     },
@@ -59,6 +66,10 @@ const router = createBrowserRouter([
         {
           path:'manageuser',
           element:<ManageUser/>
+        },
+        {
+          path:'surveyorHome',
+          element:<SurveyorHome/>
         },
         {
           path:'surveystatus',
