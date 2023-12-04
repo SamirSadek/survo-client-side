@@ -4,7 +4,7 @@ import LatestSurveyCard from "./LatestSurveyCard";
 const LatestSurveys = () => {
     const [survey, setSurvey] = useState([]);
     useEffect(() => {
-      fetch("survey.json")
+      fetch("https://survo-server.vercel.app/surveys")
         .then((res) => res.json())
         .then((data) => {
             const sortedByTimestamp = data.sort((a, b) => {

@@ -55,13 +55,13 @@ const router = createBrowserRouter([
         {
             path:'/surveys/:id',
             element:<PrivateRoutes><SurveyDetails/></PrivateRoutes>,
-            loader: ({params}) => fetch(`http://localhost:5000/surveys/${params.id}`)
+            loader: ({params}) => fetch(`https://survo-server.vercel.app/surveys/${params.id}`)
         },
       ]
     },
     {
       path:'dashboard',
-      element:<Dashboard/>,
+      element:<PrivateRoutes><Dashboard/></PrivateRoutes>,
       children:[
         {
           path:'manageuser',
@@ -98,12 +98,12 @@ const router = createBrowserRouter([
         {
           path:'udpatesurvey/:id',
           element:<UpdateSurveyItem/>,
-          loader: ({params}) => fetch(`http://localhost:5000/surveys/${params.id}`)
+          loader: ({params}) => fetch(`https://survo-server.vercel.app/surveys/${params.id}`)
         },
         {
           path:'participatesurvey/:id',
           element:<ParticipateSurveyItem/>,
-          loader: ({params}) => fetch(`http://localhost:5000/surveys/${params.id}`)
+          loader: ({params}) => fetch(`https://survo-server.vercel.app/surveys/${params.id}`)
         },
         {
           path:'feedbacks',

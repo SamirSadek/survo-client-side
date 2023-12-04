@@ -4,7 +4,7 @@ const useSurvey = () => {
     const [survey, setSurvey] = useState([]);
     const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/surveys")
+    fetch("https://survo-server.vercel.app/surveys")
       .then((res) => res.json())
       .then((data) => {
         setSurvey(data);
