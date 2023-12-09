@@ -15,6 +15,12 @@ Surveyor: samirsadek@3.com
 
 password: S@mirs123
 
+## Used Technology
+<div align="center">
+    <img src="https://skillicons.dev/icons?i=react,html,css,vscode,github,tailwind,git" /><br>
+    <img src="https://skillicons.dev/icons?i=nodejs,javascript,express,firebase,mongodb,jwt" /><br>
+</div>
+
 ## Features and Functionalities
 
 * **Role-Based Access Control:** User roles (user, surveyor, admin, pro-user) with distinct permissions.Admin control over user roles, including elevating roles to admin/surveyor.
